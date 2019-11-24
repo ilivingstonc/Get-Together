@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" type="text/css"  href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Neucha&display=swap" rel="stylesheet" type="text/css" >
+
+    <title>Pics</title>
+</head>
+
+<body id="picIndex" class="mainejs">
+        <h1 class="primaryHeading">Pictures</h1>
+    <header class="otherContent">
+        <nav>
+            <ul class="navUl">
+                <li>
+                    <!-- Mike - when you are looking at this - I want a btn that goes
+                        back your group page that the list and recipe is in -->
+                    <a href="/groups"><button>Back to<br>Get Togethers</button></a>
+                </li>
+                <li>
+                    <a href="/pics/new"> <button>Add a <br> Picture</button> </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="mainContent" id="picIMain">
+        <ul>
+            <% for (let i = 0; i < pic.length; i++) { %>
+            <li>
+                <img class="picIndex" src="<%=pic[i].url%>">
+                <p><%= pic[i].caption %></p>
+                <form action="/pics/<%=pic[i].id%>?_method=DELETE" method="POST">
+                    <button>Delete Picture</button>
+                </form>
+            </li>
+            <% } %>
+        </ul>
+    </main>
+    <footer class="ejsFooter">
+            <p>Get Together 2019 ® </p>
+        </footer>
+</body>
+
+</html>

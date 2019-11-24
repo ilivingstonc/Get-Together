@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" type="text/css"  href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Neucha&display=swap" rel="stylesheet" type="text/css" >
+    
+    <title>Edit Recipes GT</title>
+  </head>
+  <body id="recEdit">
+    <header>
+      <h1 class="primaryHeading">Edit <%=recipe.title%></h1>
+        <nav class="navUl">
+           <ul>
+             <li>
+               <a href="/recipes/<%=recipe._id%>"><button>Back to <br> <%=recipe.title%></button></a>
+             </li>
+             <li>
+               <a href="/recipes"><button>Recipes Index</button></a>
+             </li>
+          </ul>
+       </nav>
+    </header>
+    <main class="mainContent" id="recEMain">
+      <h2>Make changes to your recipe:</h2>
+<br>        <form action="/recipes/<%=recipe._id%>?_method=PUT" method="post">
+            Select which group the Recipe belongs: <select name="groupId">
+            <% for(let i = 0; i < groups.length; i++) { %><br>
+            <br>
+            <option value="<%=groups[i]._id%>" <% if(groups[i]._id.toString() === recipeGroup._id.toString()){ %> selected <% } %>>
+            <%=groups[i].name%>
+            </option>
+            <% } %>
+          </select><br/>
+          <br>
+            Edit recipe title: <input type="text" name="title" value="<%=recipe.title%>"/><br/>
+            <br>
+            Edit recipe ingriedients: <textarea name="ingredients"><%=recipe.ingredients%></textarea><br/>
+            <br>
+            Edit recipe instructions:<textarea name="instructions"><%=recipe.instructions%></textarea><br/>
+            <br>
+            Edit recipe comments: <textarea name="comments"><%=recipe.comments%></textarea><br/>
+            <br>
+            <button style="margin-bottom: 25px;" type="submit">Update Recipe</button><br>
+      </form>
+    </main>
+    <footer class="ejsFooter">
+        <p>Get Together 2019 ® </p>
+    </footer>
+  </body>
+</html>

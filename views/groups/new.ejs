@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link rel="stylesheet" type="text/css"  href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Neucha&display=swap" rel="stylesheet" type="text/css" >
+
+    <title>New Group</title>
+</head>
+<body id="groupNew" class="mainejs">
+    <h1 class="primaryHeading">Create a Get Together</h1>
+    <header class="otherContent"> 
+        <nav>
+            <ul class="navUl">
+                <li>
+                    <a href="/groups"><button>My Get Togethers</button></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="groupMainContent" id="groupNMain">
+        <form action="/groups" method="post">
+            Give your group a name: <input type="text" name="name" /><br /><br>
+            Give a group start date: <input type="date" name="dateStarted" /><br /><br>
+            Give your group a photo URL: <input type="text" name="groupPhoto" /><br /><br>
+                <button type="submit">Create Group</button>
+        </form>
+    </main>
+    <footer class="ejsFooter">
+            <p>Get Together 2019 ® </p>
+        </footer>
+</body>
+</html>

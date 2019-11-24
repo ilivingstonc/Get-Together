@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" type="text/css"  href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Neucha&display=swap" rel="stylesheet" type="text/css" >
+
+    <title></title>
+</head>
+
+<body id="groupShow" class="mainejs">
+    <header class="otherContent">
+        <nav>
+            <ul class="navUl">
+                <li>
+                    <a href="/groups"><button>My Get Togethers</button></a>
+                </li>
+                <li>
+
+                    <a href="/recipes"><button><%=group.name%> Recipes</button></a>
+                </li>
+                <li>
+
+                    <a href="/lists"><button><%=group.name%> Lists</button></a>
+                </li> 
+                <li>
+                    <a href="/pics"><button><%=group.name%> Pictures</button></a>
+                </li>
+                <aside>
+                    <a href="/groups/<%=group._id%>/edit"><button>Edit <%=group.name%></button></a>
+                        <form action="/groups/<%=group._id%>?_method=DELETE" method="post">
+                        <button type="submit">Delete <%=group.name%></button>
+                        </form>
+                 </aside>
+            </ul>
+        </nav>
+    </header>
+    <h1 class="primaryHeading"><%=group.name%></h1>
+    <main class="mainContent" id="groupSMain"> 
+        <div class="groupWrapper">
+
+            <h4 class="heading">Group formed on <%=group.dateStarted%></h4>
+            <img style="max-width: 85; height: auto;" class="groupShowPic" src="<%=group.groupPhoto%>">
+        </div>
+        
+    </main>
+    <footer class="ejsFooter">
+            <p>Get Together 2019 ® </p>
+        </footer>
+</body>
+
+</html>

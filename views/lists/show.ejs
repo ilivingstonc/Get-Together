@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" type="text/css"  href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Neucha&display=swap" rel="stylesheet" type="text/css" >
+    
+    <title>List Show</title>
+</head>
+<body id="listShow" class="mainejs">
+    <header class="otherContent">
+        <nav>
+            <ul class="navUl">
+                <li>
+                    <a href="/lists"><button>Back to <br> <%=group.name%> lists</button></a>
+                </li><br>
+                <li>
+                    <!--Mike this is another spot where we will need to be
+                    specific about going back to the group associated
+                    with the list -->
+                    <a href="/groups"><button>Back to <br> Get Togethers</button></a>
+                </li><br>
+            </ul>
+        </nav>
+    </header>
+        <h1 class="primaryHeading"> <%= list.title%> </h1><br>
+    <main class="mainContent" id="listSMain">
+        <small>List from Group: <a href="/groups/<%=group._id%>"><%=group.name%></a></small>
+        
+        
+        <ul>
+            <%for (let i = 0; i < list.items.length; i++) { %>
+                <li class="alignLi">
+                    <%=list.items[i] %>
+                    <input type="checkbox">
+                </li><br>
+                <% } %>
+        </ul>
+        <p>Check the box next to the items you plan to bring
+        </p>
+    </main>
+            <section class="rightsidecontent">
+                <a href="/lists/<%=list._id%>/edit"><button>Edit List</button></a><br>
+                <form action="/lists/<%=list.id%>?_method=DELETE" method="POST"><br>
+                    <button type="submit">Delete List</button>
+                </form>
+            </section>
+        <h2 style="font-size: 135%; color: red; align-content: : bottom;" class="dueDateTimer"> Due: <%=list.dueDate%> </h2>
+        <footer class="ejsFooter">
+                <p>Get Together 2019 ® </p>
+            </footer>
+</body>
+</html>

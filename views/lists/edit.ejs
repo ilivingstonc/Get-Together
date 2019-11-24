@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" type="text/css"  href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Neucha&display=swap" rel="stylesheet" type="text/css" >
+    
+    <title>Document</title>
+</head>
+<body id="listEdit" class="mainejs">
+    <h1 class="primaryHeading">Edit <%=list.title%> list</h1>
+    <header class="otherContent">
+            <nav>
+                <ul class="navUl">
+                    <li>
+                        <a href="/lists/<%=list._id%>"> <button>Back to <%=list.title%></button> </a>
+                    </li>
+                    <li>
+                        <a href="/lists"><button>All Lists</button></a>
+                    </li>
+                </ul>
+            </nav>  
+    </header>
+
+    <main class="mainContent" id="listEMain">
+
+        <h2 class="">Edit your list:</h2>
+        <form action="/lists/<%=list._id%>?_method=PUT" method="POST">
+            Select which group the list belongs: <select name="groupId">
+                <% for(let i = 0; i < groups.length; i++) { %>
+                <option value="<%=groups[i]._id%>" <% if(groups[i]._id.toString() === listGroup._id.toString()){ %> selected
+                    <% } %>>
+                    <%=groups[i].name%>
+                </option>
+                <% } %>
+            </select><br />
+            <br>
+            Edit list title: <input type="text" name="title" value="<%=list.title%>"> <br>
+            <br>
+            Edit list items: <input type="text" name="items" value="<%=list.items%>"> <br>
+            <br>
+            Edit list due date: <input type="text" name="dueDate" value="<%=list.dueDate%>"> <br>
+            <br>
+            <button style type="submit">Update List</button>
+        </form>
+    </main>
+    <footer class="ejsFooter">
+            <p>Get Together 2019 ® </p>
+        </footer>
+</body>
+</html>

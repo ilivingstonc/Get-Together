@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" type="text/css"  href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Neucha&display=swap" rel="stylesheet" type="text/css" >
+    
+    <title>Document</title>
+</head>
+<body id="listNew" class="mainejs">
+    <h1 class="primaryHeading">Create New List</h1>
+    <header class="otherContent">
+        <nav>
+            <ul class="navUl">
+                <li>
+                    <!-- Mike - when you are looking at this - I want a btn that goes
+                        back your group page that the list and recipe is in -->
+                    <a href="/groups"><button>Back to <br> Get Together</button></a>
+                </li>
+                <li>
+                    <a href="/lists"> <button>Back to All Lists</button> </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+        <main class="mainContent" id="listNMain">
+            <form style="margin-top: 10px" action="/lists" method="POST">
+                Which Group does this list belong to: <select name="groupId">
+                    <% for(let i = 0; i < groups.length; i++) { %>
+                    <option value="<%=groups[i]._id%>"><%=groups[i].name%></option>
+                    <% } %>
+                </select><br /><br>
+                Give your list a title: <input type="text" name="title" > <br><br>
+                Give your list some items: <input type="text" name="items" placeholder="ex: food, games, drinks,"> use commas to separate items<br><br>
+                Give your list a due date: <input type="date" name="dueDate"> <br><br>
+                    <button type="submit">Create List</button>
+            </form>
+        </main>
+        <footer class="ejsFooter">
+                <p>Get Together 2019 ® </p>
+            </footer>
+</body>
+</html>

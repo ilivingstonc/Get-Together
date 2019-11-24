@@ -1,0 +1,410 @@
+/*---------body-applies-to-everything--.ejs*/
+
+body {
+	font-family: 'Neucha', cursive;
+	background-color: #333D51;
+}
+
+/*---------body-end----.ejs*/
+
+
+/*---------home-Index-begin-----------.ejs*/
+
+.mainContainer {
+	display: grid;
+	height: 100vh;
+	grid-template-columns: 3fr 3fr 1fr;
+	grid-template-rows: 1fr 10fr 10fr 1fr;
+	grid-template-areas: 
+	"title title login"
+	"about about register"
+	"about about register"
+	"footer footer footer-r"
+}
+
+.mainHeading {
+	grid-area: title;
+	font-family: 'Devonshire', cursive;
+	background-color: #333D51;;
+ }
+
+.gtHeading {
+color: #D3AC2B;
+font-size: 50px;
+}
+
+
+.aboutSpace {
+	grid-area: about;
+	background-color: #CBD0D8;
+	display: grid;
+	overflow: hidden;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	grid-template-areas: 
+	"aboutDesc famimg"
+	"listimg smAbout ";
+	border-style: double;
+	border-color: #D3AC2B;
+}
+
+.listimg {
+	grid-area: listimg;
+	height: 50%;
+	margin: 1px;
+}
+
+.about {
+	grid-area: aboutDesc;
+	margin: 5px;
+	font-size: 120%;
+	text-align: center;
+}
+
+.familyimg {
+	grid-area: famimg;
+	width: 100%;
+}
+
+.smallAbout {
+	grid-area: smAbout;
+	text-align: center;
+	font-family: 'Devonshire', cursive;
+	font-size: 180%;
+}
+
+.registerSpace {
+	grid-area: register;
+	margin: 20px;
+	border-style: double;
+	background-color: #F4F3EA;
+	display: block;
+	text-align: center;
+	max-width: 30vh;
+	border-style: double;
+	border-color: #D3AC2B;
+}
+
+.logoHeading {
+	font-family: 'Devonshire', cursive;
+	color: #D3AC2B;
+	font-size: 120%;
+}
+
+.registerButton {
+	width: 8vh;
+	border-style: ridge;
+	display: block;
+	margin: 0 auto;
+	border-color: #354649;
+	vertical-align: middle;
+	text-align: center;
+	font-family: 'Devonshire', cursive;
+
+
+}
+
+.usernameRegister {
+	border-style: double;
+	border-color: #D3AC2B;
+
+}
+
+.emailRegister {
+	border-style: double;
+	border-color: #D3AC2B;
+	
+}
+
+.passwordRegister {
+	border-style: double;
+	border-color: #D3AC2B;
+
+}
+
+.loginSpace {
+	grid-area: login;
+	display: block;
+	text-align: left;
+	background-color: #CBD0D8;
+	border-style: double;
+	border-color: #D3AC2B;
+}
+
+.loginWrapper {
+	margin: 10px;
+
+	
+}
+
+
+.usernameLogin {
+	grid-area: login;
+	margin: 5px;
+	border-style: double;
+	border-color: #D3AC2B;
+}
+
+.passwordLogin {
+	margin: 5px;
+	border-style: double;
+	border-color: #D3AC2B;
+}
+
+.loginButton {
+	grid-area: login;
+	border-style: ridge;
+	border-color: #354649;
+	display: block;
+	vertical-align: center;
+	text-align: center;
+	width: 6vh;
+	font-family: 'Devonshire', cursive;
+	margin-left: 20px;
+	font-weight: bold;
+
+
+}
+
+
+.footer-r {
+	font-family: 'Devonshire', cursive;
+	grid-area: footer-r;
+	background-color: #CBD0D8;
+	text-align: center;
+	border-style: double;
+	border-color: #D3AC2B;
+
+}
+
+.footer {
+	grid-area: footer;
+	background-color: #333D51;
+
+}
+
+
+
+/*---------home-Index-end-----------.ejs*/
+
+/*---------inside-groups-lists-recipes-begin-----.ejs*/
+.mainejs {
+	background-color: #CBD0D8;
+	color: #333D51;
+	display: grid;
+	width: 100%;
+	height: auto;
+	grid-template-columns: 1fr 4fr 1fr;
+	grid-template-rows: 100px 2fr 2fr 50px;
+	 grid-template-areas: 
+	"ejsheading ejsheading ejsheading"
+	"ejsnav ejscontent ejsotherContent"
+	"ejsnav ejscontent ejsotherContent-r"
+	"ejsfooter ejsfooter ejsfooter-r" 
+}
+
+.primaryHeading {
+	display: inline-block;
+	color: #D3AC2B;
+	grid-area: ejsheading;
+	font-size: 40px;
+	width: 95%;
+	position: absolute;
+	background-color: #333D51;
+	border-width: 5px;
+	border-style: double;
+	border-color: #F4F3EA;
+	padding: 15px;
+	text-align: center;
+	margin-left: 10px;
+	padding-right: 15px;
+
+}
+
+.groupHeader {
+	text-align: center;
+	margin-left: 40px;
+}
+
+.ejsFooter {
+	font-family: 'Devonshire', cursive;
+	grid-area: ejsfooter-r;
+	background-color: #333D51;
+	text-align: center;
+	border-style: double;
+	border-color: #D3AC2B;
+	color: #D3AC2B;
+	margin-right: 20px;
+	height: 50px;
+	width: 200px;
+	
+}
+
+li {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	color: #D3AC2B;
+}
+
+.alignLi {
+	margin-right: 30px;
+}
+
+a {
+	text-decoration:  none;
+	color: #D3AC2B;
+	font-weight: bold;
+}
+a:hover {
+	color: rgb(136, 140, 146);
+}
+
+nav {
+	padding: 10px;
+	margin-top: 50px;
+	
+}
+
+button {
+	border-radius: 8px;
+	padding: 10px;
+	margin: 10px;
+	font-weight: bold;
+	border-style: double;
+	border-color: #D3AC2B;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	  
+}
+button:hover {
+	background-color: #F4F3EA;
+	color: #D3AC2B;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+
+.crop {
+	height: 300px;
+	width: 400px;
+	overflow: hidden;
+   }
+.crop img {
+	height: auto;
+	width: 400px;
+}
+
+
+
+.mainContent {
+	grid-area: ejscontent;
+	padding-top: 25px;
+	padding-bottom: 100px;
+	margin: 50px 10px;
+	margin-left: 70px;
+	text-align: center;
+	border-style: double;
+	background-color: #F4F3EA;
+	font-weight: bold;
+	font-size: 20px;
+	color: #D3AC2B;
+	text-align: center;
+	max-width: 85%;
+	height: auto;
+	
+	
+}
+
+.groupWrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	flex-direction: column;
+	padding: 10px;
+}
+
+
+.groupMainContent {
+	grid-area: ejscontent;
+	padding-top: 25px;
+	padding-bottom: 100px;
+	margin: 50px 10px;
+	margin-left: 70px;
+	text-align: center;
+	border-style: double;
+	background-color: #F4F3EA;
+	font-weight: bold;
+	font-size: 20px;
+	color: #D3AC2B;
+	text-align: center;
+	max-width: 85%;
+	height: auto;
+}
+
+.otherContent {
+	grid-area: ejsnav;
+	margin: 40px 15px;
+
+}
+
+.rightsidecontent{
+	grid-area: ejsotherContent;
+	margin-top: 100px;
+	display: block;
+
+}
+
+.groupNameAnchor {
+	color: #D3AC2B; 
+	font-size: 150%; 
+	border-style: double;
+	border-color: #333D51;
+	padding: 2px;
+}
+
+.groupImg {
+	border-style: solid;
+	border-width: 5px;
+	border-color: #333D51;
+	padding: 2px;
+	margin: 25px;
+	
+}
+
+.groupShowPic {
+	max-width: 100%;
+	border-radius: 30%;
+	height: 50vh;
+	display: block;
+	
+
+}
+
+
+.groupLinks {
+	text-align: center;
+}
+
+.recShowSmall {
+	color: #D3AC2B;
+	font-size: 120%;
+}
+
+.dueDateTimer {
+	grid-area: ejsotherContent-r;
+	display: block;
+	padding-top: 65%;
+
+}
+
+.picIndex {
+	border-style: solid;
+	border-width: 5px;
+	border-color: #333D51;
+	max-width: 85%; 
+	height: auto;
+}
+
+/*---------inside-groups-lists-recipes-end-----.ejs*/
+

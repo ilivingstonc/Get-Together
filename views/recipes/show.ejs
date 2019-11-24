@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Your Recipe</title>
+
+    <link rel="stylesheet" type="text/css"  href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Neucha&display=swap" rel="stylesheet" type="text/css" >
+
+  </head>
+  <body class="mainejs" id="recShow">
+    <header class="otherContent">
+      <nav>
+        <ul class="navUl">
+          <li>
+            <a href="/recipes"><button>Back to <br> <%=group.name%> recipes</button></a>
+          </li>
+          <li>
+            <!--Mike this is another spot where we will need to be
+                    specific about going back to the group associated
+                    with the recipe -->
+              <a href="/groups"><button>My Get Togethers</button></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+        <h1 class="primaryHeading"><%=recipe.title%></h1>
+    <main class="mainContent" id="recShowMain">
+        <small class="recShowSmall">
+          Recipe from group: 
+          <a href="/groups/<%=group._id%>"><%=group.name%></a>
+        </small><br><br>
+        <!-- <section><a href="/recipes/<%=
+        // recipe._id
+        %>">
+        <%=
+        // recipe.title
+        %></a>
+        </section> -->
+        <section>
+          Ingriedients:<br> <%=recipe.ingredients%>
+        </section><br>
+        <section>
+          Instructions:<br> <%=recipe.instructions%>
+        </section><br>
+        <section>
+          Comments:<br> <%=recipe.comments%>
+        </section><br>
+      </main>
+          <section class="rightsidecontent">
+            <a href="/recipes/<%=recipe._id%>/edit"><button>Edit Recipe</button></a>
+            <form action="/recipes/<%=recipe._id%>?_method=DELETE" method="post"><br>
+              <button type="submit">Delete Recipe</button>
+            </form>
+          </section>
+          <footer class="ejsFooter">
+              <p>Get Together 2019 ® </p>
+          </footer>
+  </body>
+</html>

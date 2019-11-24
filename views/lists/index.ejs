@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" type="text/css"  href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Neucha&display=swap" rel="stylesheet" type="text/css" >
+    
+    <title>Document</title>
+</head>
+<body id="listIndex" class="mainejs">
+    <h1 class="primaryHeading">Lists</h1>
+    <header class="otherContent">
+        <nav>
+            <ul>
+                <li>
+                        <!-- Mike - when you are looking at this - I want a btn that goes
+                        back your group page that the list and recipe is in -->
+                    <a href="/groups"><button>Back to<br>Get Togethers</button></a>
+                </li><br>
+                <li>
+                    <a href="/lists/new"> <button>Create <br> a List</button> </a>
+                </li><br>
+            </ul>
+        </nav>
+    </header>
+    <main class="mainContent" id="listIMain">
+            <ul>
+                <% for (let i =0; i < list.length; i++) { %>
+                    <li>
+                        <a href="/lists/<%=list[i]._id%>"><%=list[i].title%></a>
+                        <form style="margin-top: 10px" action="/lists/<%=list[i].id%>?_method=DELETE" method="POST">
+                            <button>Delete List</button>
+                         </form>
+                    </li>
+                <% } %>
+            </ul>
+    </main>
+    <footer class="ejsFooter">
+            <p>Get Together 2019 ® </p>
+        </footer>
+</body>
+</html>

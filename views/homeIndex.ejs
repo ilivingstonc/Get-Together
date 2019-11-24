@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>GT Home</title>
+    <% include ./partials/head %>
+</head>
+
+<body>
+    <div class="mainContainer">
+        <div class="mainHeading">
+            <h1 class="gtHeading">Get Together</h1>
+        </div>
+
+        <div class="loginSpace"> 
+            <div class="loginWrapper">       
+                <%= message %> 
+                <form action="/auth/login" method="POST">
+                    <input class="usernameLogin" type="text" name="username" placeholder="Username"/>
+                    <input class="passwordLogin" type="password" name="password" placeholder="Password" />
+                    <button class="loginButton" type="submit">Log In</button>
+                 </form>
+                
+            </div>     
+        </div>    
+
+        
+        <div class="aboutSpace">
+            <img class="familyimg" src="https://cdn.psychologytoday.com/sites/default/files/styles/image-article_inline_full/public/field_blog_entry_teaser_image/family_dinner_3_0.jpg?itok=4CHWEych">
+            <img class="listimg" src="https://cdn.kinsights.com/cache/47/6e/476ed7bb43f3769276b1ccd2badb4eb1.jpg">
+            <div class="about">
+                <h3>Get Together, even when you're not together
+                    </h3>
+                    <p>
+                        Every group needs an organizer.<br> 
+                        Someone who will plan, track<br>
+                        and organize social gatherings.<br> 
+                        It's a job that Get Together does seamlessly,<br>
+                        taking the stress out of planning your<br> 
+                        get togethers. Try Get Together today. <br>
+                        Share recipes,<br>
+                        lists,<br>
+                        photos.<br>
+                        Share each other's company.<br>
+                        And share the work.<br>
+                    </p>
+                <h4 class="logoHeading">Get Together®</h4>
+            </div>
+                <div class="smallAbout">
+                    <p>
+                        Join today. Plan tomorrow.
+                    </p>
+                </div>
+        </div>
+
+        <div class="registerSpace">
+            <p>New to Get Together?<br>
+                Get Together is simply an app for groups.<br>
+                Share Grandma's recipe with all your siblings<br>
+                Post photos from last year's reunion<br>
+                Create a task list and let everyone contribute<br>
+                Get Together®
+            </p>
+
+            <h3>Register Here</h3>
+            
+            <form action="/auth/registration" method="POST">
+                <input class="usernameRegister" type="text" name="username" placeholder="Username"/><br>
+                <input class="emailRegister" type="email" name="email" placeholder="Email"/><br>
+                <input class="passwordRegister" type="password" name="password" placeholder="Password"/><br>
+                <button class="button registerButton" type="submit">Register</button>
+            </form>
+
+            <% if(logged === true){ %>
+            Logged in as <%= username %><br />
+            <a href="/groups">My Groups</a>
+            <a href="/auth/logout">Logout</a>
+            <%}%>
+            
+        </div>
+
+        <div class="footer-r">
+            <p>Get Together 2019 ®</p>
+        </div>
+
+        <div class="footer">
+        </div>  
+    </div>
+
+</body>
+</html>

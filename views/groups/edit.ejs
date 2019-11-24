@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" type="text/css"  href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Neucha&display=swap" rel="stylesheet" type="text/css" >
+
+    <title>Group Edit</title>
+</head>
+
+<body id="groupEdit" class="mainejs">
+        <h1 class="primaryHeading">Get Together<%=group.title%></h1>
+    <header class="otherContent">
+        <nav>
+            <ul class="navUl">
+                <li>
+                    <a href="/groups/<%=group._id%>"> <button>Back</button> </a>
+                </li>
+                <li>
+                    <a href="/groups"> <button>My Get Togethers</button></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="groupMainContent" id="groupEMain">
+        <h2 class="heading">edit your group here:</h2>
+        <form action="/groups/<%=group._id%>?_method=PUT" method="post">
+                Edit name of group: <input type="text" name="name" value="<%=group.name%>" /><br /><br>
+                Edit group photo URL: <input type="text" name="groupPhoto" value="<%=group.groupPhoto%>" /><br /><br>
+                <button type="submit">Update Group</button>
+            
+        </form>
+    </main>
+    <footer class="ejsFooter">
+        <p>Get Together 2019 ® </p>
+    </footer>
+</body>
+
+</html>
